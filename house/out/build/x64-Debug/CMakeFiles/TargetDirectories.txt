@@ -1,0 +1,3 @@
+C:/Users/Levi Kamara Zwannah/Documents/School works/ICS year 3/Semester 2/papers/CG/house/Diamond/out/build/x64-Debug/CMakeFiles/Diamond.dir
+C:/Users/Levi Kamara Zwannah/Documents/School works/ICS year 3/Semester 2/papers/CG/house/Diamond/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Levi Kamara Zwannah/Documents/School works/ICS year 3/Semester 2/papers/CG/house/Diamond/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
