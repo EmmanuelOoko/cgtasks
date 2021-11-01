@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Diamond",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Diamond::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Diamond-Debug-74e257adb8cbceb637be.json",
+					"name" : "Diamond",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Levi Kamara Zwannah/Documents/School works/ICS year 3/Semester 2/papers/CG/house/Diamond/out/build/x64-Debug",
+		"source" : "C:/Users/Levi Kamara Zwannah/Documents/School works/ICS year 3/Semester 2/papers/CG/house/Diamond"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}
