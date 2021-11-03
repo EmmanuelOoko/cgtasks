@@ -20,17 +20,21 @@ void Gl_LINE_LOOP(){
     glVertex2d(3, 0);
 
     glVertex2d(5, 0);
+
     glEnd(); //Ending a command
     glFlush(); // Forces execution before the gathering is complete. Execute the command in finite time?
 }
 
 void display(void) {
+
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f); //Background color
     glClear(GL_COLOR_BUFFER_BIT); //Clearing the colors on the back buffer.
+    glColor3f(0.0f, 0.0f, 1.0f); //The color of the 2 outer stacked rectangles
+
     Gl_LINE_LOOP();
     glEnd();
     glFlush();
 }
-
 void init(void) {
 
     //Defining world coordinate frame
