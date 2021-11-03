@@ -1,7 +1,17 @@
 #include<GL/freeglut.h>
+#include <math.h>
 
 
-void Gl_LINE_LOOP(){
+void init(void) {
+    //Defining world coordinate frame
+    glMatrixMode(GL_PROJECTION); //which matrix is for the what?
+    glLoadIdentity();
+    glOrtho(-10.0, 10.0, -10.0, 10.0, -10.0, 10.0); // model in real word units
+    // (left, right, bottom, top, near, far)
+}
+
+
+void drawHouseOutline() {
 
     glBegin(GL_LINE_LOOP); //command to begin
 
@@ -24,39 +34,39 @@ void Gl_LINE_LOOP(){
     glFlush(); // Forces execution before the gathering is complete. Execute the command in finite time?
 }
 
-void display(void) {
+const int  HW=10;
+const int HY_TOP = 3;
 
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f); //Background color
-    glClear(GL_COLOR_BUFFER_BIT); //Clearing the colors on the back buffer.
-    glColor3f(0.0f, 0.0f, 1.0f); //The color of the 2 outer stacked rectangles
+void drawHalfCircle()  // the empty one
+{
 
-    Gl_LINE_LOOP();
+    float radius = 0.4*HW;
+    float PI = 3.14;
+    float twoPI = 2 * PI;
+    glBegin(GL_LINE_STRIP);
+    
+    for (float i = 0.0; i <= twoPI / 2; i += 0.001)
+        glVertex2f((cos(i) * radius), (sin(i) * radius)+HY_TOP);
     glEnd();
     glFlush();
 }
-void init(void) {
-
-    //Defining world coordinate frame
-    glMatrixMode(GL_PROJECTION); //which matrix is for the what?
-    glLoadIdentity();
-    glOrtho(-10.0, 10.0, -10.0, 10.0, -10.0, 10.0); // model in real word units
-    // (left, right, bottom, top, near, far)
+void display(void) {
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    drawHouseOutline();
+    drawHalfCircle();
+       
 }
+int main(int argc, char** argv)
 
-int main(int argc, char** argv) {
-    //Creating and initializing glut windowing system
-    glutInit(&argc, argv);
-    glutInitWindowSize(600, 400);
-    glutInitWindowPosition(100, 100);
-    glutCreateWindow("Stacked Rectangle...");
-
-    //Opening initializations
-    init();
-
-    //Registering Call back methods
+{
+    glutInit(&argc, argv);  //initialize glut
+    glutInitWindowSize(700, 700); //width and height
+    glutInitWindowPosition(0, 50); //bottom-left corner
+    glutCreateWindow("half circle");
     glutDisplayFunc(display);
-
-    //Entering the main loop
-    glutMainLoop();
+    init();
+    glutMainLoop(); //loops itself again and again
     return 0;
 }
