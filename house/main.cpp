@@ -9,7 +9,41 @@ void init(void) {
     glOrtho(-10.0, 10.0, -10.0, 10.0, -10.0, 10.0); // model in real word units
     // (left, right, bottom, top, near, far)
 }
+void drawWindowBar(float x, float y, int side) {
+	glColor3f(0.0, 0.0, 1.0);//Window Colour
+	glBegin(GL_LINE);
+	glVertex2f(x + side / 2.0, y);//vertices
+	glVertex2f(x + side / 2.0, y - side);
+	glVertex2f(x, y - side / 2.0);//vertices
+	glVertex2f(x + side, y - side / 2.0);
 
+	glEnd();
+	glFlush();//ending command
+}
+void drawWindow(float x, float y, int side) {
+	glColor3f(0.0, 1.0, 0.0);//Window Colour
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(x, y);//vertices
+	glVertex2f(x+side, y);
+	glVertex2f(x, y-side);//vertices
+	glVertex2f(x + side, y-side);
+	
+	glEnd();
+	glFlush();//ending command
+	drawWindowBar(x, y, side);
+}
+void drawDoor1(float x, float y, int width, int height) {
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(x, y);
+	glVertex2f(x + width, y);
+
+	glVertex2f(x, y - height);
+	glVertex2f(x + width, y - height);
+
+	glEnd();
+	glFlush();
+}
 
 void drawHouseOutline() {
 
